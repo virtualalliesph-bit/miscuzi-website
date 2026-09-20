@@ -5,118 +5,559 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Miscuzi | Comfort food, Elevated</title>
   <meta name="description" content="Celebrate better with Miscuzi. Comfort food made for sharing.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root{--terracotta:#bf4b28;--terracotta-dark:#9f3b1f;--warm-white:#fffdfa;--brown:#2f241f;--muted:#75675f;--gold:#aa8c52;--line:#e6ddd3;--max:1180px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--warm-white);color:var(--brown);font-family:'Open Sans',Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}img{display:block;max-width:100%}a{text-decoration:none;color:inherit}button{font:inherit}.container{width:min(var(--max),calc(100% - 40px));margin:auto}
-    .promo{background:var(--terracotta);color:#fff;text-align:center;padding:9px 16px;font-size:12px}
-    .site-header{position:sticky;top:0;z-index:30;background:rgba(255,253,250,.97);border-bottom:1px solid rgba(47,36,31,.08);backdrop-filter:blur(8px)}
-    .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:28px}.logo img{width:92px;height:auto}.nav-links{display:flex;align-items:center;gap:28px;font-size:13px}.nav-links a{padding:8px 0;border-bottom:1px solid transparent}.nav-links a:hover{border-color:var(--brown)}.nav-cta{padding:12px 18px!important;background:var(--terracotta);color:#fff!important;border-bottom:0!important}.nav-cta:hover{background:var(--terracotta-dark)}.menu-toggle{display:none;width:42px;height:42px;border:1px solid var(--line);background:#fff;cursor:pointer}
-    .hero{position:relative;width:100%;overflow:hidden;background:#d8c4ad}.hero-image{display:block;width:100%;height:auto}.hero-overlay{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#fff;background:linear-gradient(rgba(30,20,16,.12),rgba(30,20,16,.28))}.hero-content{position:relative;z-index:1;max-width:820px;padding:32px 24px}.hero h1{margin:0 0 14px;font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(34px,5vw,62px);line-height:1.03;letter-spacing:-1.2px}.hero p{margin:0 0 22px;font-size:16px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 28px;background:var(--terracotta);color:#fff;font-size:12px;font-weight:700;letter-spacing:1.15px;text-transform:uppercase;transition:.2s ease}.btn:hover{background:var(--terracotta-dark);transform:translateY(-1px)}
-    .story{background:#fff}.story-grid{display:grid;grid-template-columns:1fr 1fr;min-height:720px}.story-copy{padding:72px max(42px,8vw);display:flex;flex-direction:column;justify-content:center}.section-kicker{margin:0 0 14px;font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-size:20px;font-weight:400}.section-rule{height:1px;background:var(--line);margin:0 0 34px}.story-copy h2{margin:0 0 18px;font-size:20px;line-height:1.4;font-weight:400}.story-copy h3{margin:30px 0 12px;font-size:18px;line-height:1.4;font-weight:400}.story-copy p{margin:0 0 14px;color:#5f514a;font-size:14px;line-height:1.72}.story-photo{min-height:720px;background:url("https://lh3.googleusercontent.com/d/1d56EUVg3PuIKra6oaY0DFE33amtK_vis") center/cover no-repeat}
-    .gallery{padding:48px 0 56px;background:var(--gold);color:#fff}.gallery h2{margin:0;font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-size:22px;font-weight:400}.gallery-rule{height:1px;background:rgba(255,255,255,.75);margin:15px 0 24px}.carousel-shell{position:relative}.photo-carousel{display:flex;gap:12px;overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 2px 8px}.photo-carousel::-webkit-scrollbar{display:none}.gallery-slide{flex:0 0 calc(33.333% - 8px);margin:0;aspect-ratio:9/14;overflow:hidden;background:rgba(255,255,255,.12);scroll-snap-align:start}.gallery-slide.landscape{aspect-ratio:4/3}.gallery-slide img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease}.gallery-slide:hover img{transform:scale(1.025)}
-    .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;border:1px solid rgba(255,255,255,.58);border-radius:50%;background:rgba(47,36,31,.78);color:#fff;cursor:pointer;font-size:26px;line-height:1;display:grid;place-items:center}.carousel-btn:hover{background:var(--brown)}.carousel-btn.prev{left:-22px}.carousel-btn.next{right:-22px}.gallery-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}.gallery-dot{width:7px;height:7px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.42);cursor:pointer}.gallery-dot.active{background:#fff}
-    .video-section{background:#fafafa;padding:68px 0}.video-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.95fr);align-items:center;gap:80px;max-width:980px;margin:auto}.video-frame{width:100%;max-width:380px;aspect-ratio:9/16;background:#181310;overflow:hidden}.video-frame video,.video-frame iframe{width:100%;height:100%;object-fit:cover;display:block;border:0}.video-copy h2{margin:0 0 16px;font-size:24px;font-weight:400}.video-copy p{margin:0 0 26px;color:var(--muted);font-size:14px;line-height:1.72}#future-video-carousel{display:none}
-    .social{padding:48px 0;background:#fff}.social h2{margin:0;font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-size:20px;font-weight:400}.social-rule{height:1px;background:var(--line);margin:15px 0 24px}.social-links{display:flex;justify-content:center;gap:22px}.social-links a{width:46px;height:46px;padding:0;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;transition:.2s ease;color:var(--brown)}.social-links a:hover{border-color:var(--terracotta);color:var(--terracotta);transform:translateY(-1px)}.social-links svg{width:20px;height:20px;display:block;fill:currentColor}
-    footer{background:var(--terracotta);color:#fff;padding:34px 0}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:12px}
-    @media(max-width:900px){.nav-links{gap:16px}.story-grid{grid-template-columns:1fr}.story-photo{order:-1;min-height:560px}.story-copy{padding:56px 38px}.gallery-slide{flex-basis:calc(50% - 6px)}.video-grid{gap:44px}}
-    @media(max-width:720px){.container{width:min(var(--max),calc(100% - 28px))}.nav{min-height:68px}.logo img{width:82px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;left:0;right:0;top:68px;background:var(--warm-white);padding:16px 20px 22px;flex-direction:column;align-items:stretch;gap:4px;border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.nav-links a{padding:12px}.nav-cta{text-align:center;margin-top:6px}.hero h1{font-size:36px}.hero p{font-size:14px}.hero-content{padding:20px 18px}.story-photo{min-height:430px}.story-copy{padding:46px 24px}.gallery{padding:42px 0}.gallery h2{font-size:19px}.gallery-slide,.gallery-slide.landscape{flex:0 0 82%;aspect-ratio:9/14}.carousel-btn{display:none}.video-section{padding:52px 0}.video-grid{grid-template-columns:1fr;gap:32px}.video-frame{width:min(78vw,360px);margin:auto}.video-copy{text-align:center}.footer-inner{flex-direction:column;text-align:center}}
+    :root{
+      --terracotta:#bf4b28;
+      --terracotta-dark:#9f3b1f;
+      --cream:#f7f2e9;
+      --warm-white:#fffdfa;
+      --brown:#2f241f;
+      --muted:#75675f;
+      --gold:#aa8c52;
+      --line:#e6ddd3;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--warm-white);
+      color:var(--brown);
+      font-family:'Open Sans',Arial,Helvetica,sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    button{font:inherit}
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+
+    .promo{
+      background:var(--terracotta);
+      color:#fff;
+      text-align:center;
+      padding:9px 16px;
+      font-size:12px;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:30;
+      background:rgba(255,253,250,.97);
+      border-bottom:1px solid rgba(47,36,31,.08);
+      backdrop-filter:blur(8px);
+    }
+    .nav{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:28px;
+    }
+    .logo img{width:92px;height:auto}
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      font-size:13px;
+    }
+    .nav-links a{padding:8px 0;border-bottom:1px solid transparent}
+    .nav-links a:hover{border-color:var(--brown)}
+    .nav-cta{
+      padding:12px 18px!important;
+      background:var(--terracotta);
+      color:#fff!important;
+      border-bottom:0!important;
+    }
+    .nav-cta:hover{background:var(--terracotta-dark)}
+    .menu-toggle{
+      display:none;
+      width:42px;height:42px;
+      border:1px solid var(--line);
+      background:#fff;
+      cursor:pointer;
+    }
+
+    .hero{position:relative;overflow:hidden;text-align:center;color:#fff;background:#d8c4ad}
+    .hero>.hero-content{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;background:rgba(30,20,16,.22)}
+    .hero-content{
+      position:relative;
+      z-index:1;
+      max-width:820px;
+      padding:80px 24px;
+    }
+    .hero h1{
+      margin:0 0 18px;
+      font-family:'Playfair Display',Georgia,'Times New Roman',serif;
+      font-weight:400;
+      font-size:clamp(45px,7vw,76px);
+      line-height:1.03;
+      letter-spacing:-1.5px;
+    }
+    .hero p{margin:0 0 28px;font-size:17px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 28px;
+      background:var(--terracotta);
+      color:#fff;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:1.15px;
+      text-transform:uppercase;
+      transition:.2s ease;
+    }
+    .btn:hover{background:var(--terracotta-dark);transform:translateY(-1px)}
+
+    .story{background:#fff}
+    .story-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      min-height:720px;
+    }
+    .story-copy{
+      padding:72px max(42px,8vw);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .section-kicker{
+      margin:0 0 14px;
+      font-family:'Playfair Display',Georgia,'Times New Roman',serif;
+      font-size:20px;
+      font-weight:400;
+    }
+    .section-rule{height:1px;background:var(--line);margin:0 0 34px}
+    .story-copy h2{
+      margin:0 0 18px;
+      font-size:20px;
+      line-height:1.4;
+      font-weight:400;
+    }
+    .story-copy h3{
+      margin:30px 0 12px;
+      font-size:18px;
+      line-height:1.4;
+      font-weight:400;
+    }
+    .story-copy p{
+      margin:0 0 14px;
+      color:#5f514a;
+      font-size:14px;
+      line-height:1.72;
+    }
+    .story-photo{
+      min-height:720px;
+      background:url("assets/images/story-lasagna.webp") center/cover no-repeat;
+    }
+
+    .gallery{
+      padding:48px 0 56px;
+      background:var(--gold);
+      color:#fff;
+    }
+    .gallery h2{
+      margin:0;
+      font-family:'Playfair Display',Georgia,'Times New Roman',serif;
+      font-size:22px;
+      font-weight:400;
+    }
+    .gallery-rule{height:1px;background:rgba(255,255,255,.75);margin:15px 0 24px}
+    .carousel-shell{position:relative}
+    .photo-carousel{
+      display:flex;
+      gap:12px;
+      overflow-x:auto;
+      scroll-behavior:smooth;
+      scroll-snap-type:x mandatory;
+      scrollbar-width:none;
+      padding:0 2px 8px;
+    }
+    .photo-carousel::-webkit-scrollbar{display:none}
+    .gallery-slide{
+      flex:0 0 calc(33.333% - 8px);
+      margin:0;
+      aspect-ratio:9/14;
+      overflow:hidden;
+      background:rgba(255,255,255,.12);
+      scroll-snap-align:start;
+    }
+    .gallery-slide.landscape{aspect-ratio:4/3}
+    .gallery-slide img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .3s ease;
+    }
+    .gallery-slide:hover img{transform:scale(1.025)}
+    .carousel-btn{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      z-index:3;
+      width:44px;height:44px;
+      border:1px solid rgba(255,255,255,.58);
+      border-radius:50%;
+      background:rgba(47,36,31,.78);
+      color:#fff;
+      cursor:pointer;
+      font-size:26px;
+      line-height:1;
+      display:grid;
+      place-items:center;
+    }
+    .carousel-btn:hover{background:var(--brown)}
+    .carousel-btn.prev{left:-22px}
+    .carousel-btn.next{right:-22px}
+    .gallery-dots{
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      margin-top:18px;
+    }
+    .gallery-dot{
+      width:7px;height:7px;
+      padding:0;border:0;border-radius:50%;
+      background:rgba(255,255,255,.42);
+      cursor:pointer;
+    }
+    .gallery-dot.active{background:#fff}
+
+    .video-section{
+      background:#fafafa;
+      padding:68px 0;
+    }
+    .video-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(300px,.95fr);
+      align-items:center;
+      gap:80px;
+      max-width:980px;
+      margin:auto;
+    }
+    .video-frame{
+      width:100%;
+      max-width:380px;
+      aspect-ratio:9/16;
+      background:#181310;
+      overflow:hidden;
+    }
+    .video-frame video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .video-copy h2{
+      margin:0 0 16px;
+      font-size:24px;
+      font-weight:400;
+    }
+    .video-copy p{
+      margin:0 0 26px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.72;
+    }
+
+    /* Reserved for the influencer video carousel to be inserted later */
+    #future-video-carousel{display:none}
+
+    .social{
+      padding:48px 0;
+      background:#fff;
+    }
+    .social h2{
+      margin:0;
+      font-family:'Playfair Display',Georgia,'Times New Roman',serif;
+      font-size:20px;
+      font-weight:400;
+    }
+    .social-rule{height:1px;background:var(--line);margin:15px 0 24px}
+    .social-links{
+      display:flex;
+      justify-content:center;
+      gap:22px;
+    }
+    .social-links a{
+      width:46px;
+      height:46px;
+      padding:0;
+      border:1px solid var(--line);
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      transition:.2s ease;
+      color:var(--brown);
+    }
+    .social-links a:hover{
+      border-color:var(--terracotta);
+      color:var(--terracotta);
+      transform:translateY(-1px);
+    }
+    .social-links svg{
+      width:20px;
+      height:20px;
+      display:block;
+      fill:currentColor;
+    }
+
+    footer{
+      background:var(--terracotta);
+      color:#fff;
+      padding:34px 0;
+    }
+    .footer-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      font-size:12px;
+    }
+
+    @media(max-width:900px){
+      .nav-links{gap:16px}
+      .story-grid{grid-template-columns:1fr}
+      .story-photo{order:-1;min-height:560px}
+      .story-copy{padding:56px 38px}
+      .gallery-slide{flex-basis:calc(50% - 6px)}
+      .video-grid{gap:44px}
+    }
+
+    @media(max-width:720px){
+      .container{width:min(var(--max),calc(100% - 28px))}
+      .nav{min-height:68px}
+      .logo img{width:82px}
+      .menu-toggle{display:block}
+      .nav-links{
+        display:none;
+        position:absolute;
+        left:0;right:0;top:68px;
+        background:var(--warm-white);
+        padding:16px 20px 22px;
+        flex-direction:column;
+        align-items:stretch;
+        gap:4px;
+        border-bottom:1px solid var(--line);
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{padding:12px}
+      .nav-cta{text-align:center;margin-top:6px}
+      .hero{min-height:0}
+      .hero h1{font-size:46px}
+      .hero p{font-size:15px}
+      .story-photo{min-height:430px}
+      .story-copy{padding:46px 24px}
+      .gallery{padding:42px 0}
+      .gallery h2{font-size:19px}
+      .gallery-slide,.gallery-slide.landscape{flex:0 0 82%;aspect-ratio:9/14}
+      .carousel-btn{display:none}
+      .video-section{padding:52px 0}
+      .video-grid{grid-template-columns:1fr;gap:32px}
+      .video-frame{width:min(78vw,360px);margin:auto}
+      .video-copy{text-align:center}
+      .footer-inner{flex-direction:column;text-align:center}
+    }
   </style>
 </head>
 <body>
-<div class="promo">Get 5% Commission on every successful referral's first order. No minimum spend.</div>
+
+<div class="promo">
+  Get 5% Commission on every successful referral's first order. No minimum spend.
+</div>
+
 <header class="site-header">
   <div class="container nav">
-    <a class="logo" href="#home" aria-label="Miscuzi home"><img src="https://lh3.googleusercontent.com/d/1Yym74rVShUNhuwHk-vyavT-sZ8PQ2e7L" alt="Miscuzi"></a>
+    <a class="logo" href="index.html" aria-label="Miscuzi home">
+      <img src="assets/images/logo.webp" alt="Miscuzi">
+    </a>
+
     <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+
     <nav class="nav-links" aria-label="Main navigation">
-      <a href="#home">Home</a>
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="events.html">Events</a>
       <a href="https://instagram.com/miscuziph" target="_blank" rel="noopener">Inquiry</a>
       <a class="nav-cta" href="https://miscuzi.cococart.co" target="_blank" rel="noopener">Order Now</a>
     </nav>
   </div>
 </header>
+
 <main>
   <section class="hero" id="home">
-    <img class="hero-image" src="https://lh3.googleusercontent.com/d/1fbvkxlfg5dgAd1kuxnGU_0YwbSpWyqX8" alt="Miscuzi comfort food spread">
-    <div class="hero-overlay">
+    <img src="assets/images/hero.webp" alt="Miscuzi comfort food spread" style="display:block;width:100%;height:auto">
       <div class="hero-content">
-        <h1>Comfort food, Elevated</h1>
-        <p>Celebrate better with Miscuzi</p>
-        <a class="btn" href="https://miscuzi.cococart.co" target="_blank" rel="noopener">Order Now</a>
-      </div>
+      <h1>Comfort food, Elevated</h1>
+      <p>Celebrate better with Miscuzi</p>
+      <a class="btn" href="https://miscuzi.cococart.co" target="_blank" rel="noopener">Order Now</a>
     </div>
   </section>
+
   <section class="story" id="story">
     <div class="story-grid">
       <div class="story-copy">
-        <p class="section-kicker">Our Story</p><div class="section-rule"></div>
+        <p class="section-kicker">Our Story</p>
+        <div class="section-rule"></div>
+
         <h2>A Family Recipe, Made to be Shared</h2>
         <p>Miscuzi began in 2017, when our founder, Nicel, returned to Manila after years of flying in the Middle East.</p>
         <p>It started with a mother's cravings, a sister's recipe, and a family's love for lasagna.</p>
         <p>What began in their home kitchen has grown into a signature dish made for sharing and loved by many.</p>
+
         <h3>Celebrate Better with Miscuzi</h3>
         <p>For years, we've been part of your small wins and big celebrations through our food trays and food packs.</p>
         <p>This year, we're bringing the celebration closer to you with our Baked Scallops Mobile Cart and an intimate private dining experience.</p>
         <p>Let's celebrate with our crafted comfort food and a space that feels like home.</p>
       </div>
+
       <div class="story-photo" role="img" aria-label="Miscuzi lasagna"></div>
     </div>
   </section>
+
   <section class="gallery" id="reviews">
     <div class="container">
-      <h2>What they're saying #miscuziexperience</h2><div class="gallery-rule"></div>
+      <h2>What they're saying #miscuziexperience</h2>
+      <div class="gallery-rule"></div>
+
       <div class="carousel-shell">
         <button class="carousel-btn prev" type="button" aria-label="Previous photos">‹</button>
+
         <div class="photo-carousel" id="photoCarousel">
-          <figure class="gallery-slide"><img src="https://lh3.googleusercontent.com/d/1j-ZOXutjsUCJRw653ZkHgkoeTzoNpqRS" alt="Miscuzi customer feedback 1"></figure>
-          <figure class="gallery-slide"><img src="https://lh3.googleusercontent.com/d/1fRv2k9VO4XQRK6_QcB8V2OnvJcRcYbRd" alt="Miscuzi customer feedback 2"></figure>
-          <figure class="gallery-slide"><img src="https://lh3.googleusercontent.com/d/1s3c5cYYc_hK1wXMgkt99XeqauuEFdUs7" alt="Miscuzi customer feedback 3"></figure>
-          <figure class="gallery-slide"><img src="https://lh3.googleusercontent.com/d/17ZAQbn_QMORGfikgTj34bm3deTpJsF-d" alt="Miscuzi customer feedback 4"></figure>
-          <figure class="gallery-slide landscape"><img src="https://lh3.googleusercontent.com/d/1fbvkxlfg5dgAd1kuxnGU_0YwbSpWyqX8" alt="Miscuzi customer feedback 5"></figure>
+          <figure class="gallery-slide"><img src="assets/images/gallery-01.webp" alt="Miscuzi customer feedback 1"></figure>
+          <figure class="gallery-slide"><img src="assets/images/gallery-02.webp" alt="Miscuzi customer feedback 2"></figure>
+          <figure class="gallery-slide"><img src="assets/images/gallery-03.webp" alt="Miscuzi customer feedback 3"></figure>
+          <figure class="gallery-slide"><img src="assets/images/gallery-04.webp" alt="Miscuzi customer feedback 4"></figure>
         </div>
+
         <button class="carousel-btn next" type="button" aria-label="Next photos">›</button>
       </div>
+
       <div class="gallery-dots" id="galleryDots" aria-label="Gallery pagination"></div>
     </div>
   </section>
+
   <section class="video-section" id="video">
     <div class="container">
       <div class="video-grid">
-        <div class="video-frame"><iframe src="https://drive.google.com/file/d/18SRnTDMPrNT56WdeAU5PWl-igY3EuMOH/preview" allow="autoplay; fullscreen" allowfullscreen title="Miscuzi featured video"></iframe></div>
-        <div class="video-copy"><h2>See what everyone's craving.</h2><p>Try the Miscuzi Experience and discover the Scallops Bar.</p><a class="btn" href="https://instagram.com/miscuziph" target="_blank" rel="noopener">Learn more</a></div>
+        <div class="video-frame">
+          <video controls playsinline preload="metadata">
+            <source src="assets/videos/featured.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+
+        <div class="video-copy">
+          <h2>See what everyone's craving.</h2>
+          <p>Try the Miscuzi Experience and discover the Scallops Bar.</p>
+          <a class="btn" href="https://instagram.com/miscuziph" target="_blank" rel="noopener">Learn more</a>
+        </div>
       </div>
+
       <div id="future-video-carousel"></div>
     </div>
   </section>
+
   <section class="social">
     <div class="container">
-      <h2>Social</h2><div class="social-rule"></div>
+      <h2>Social</h2>
+      <div class="social-rule"></div>
       <div class="social-links">
-        <a href="https://facebook.com/963141783839421" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 8H16V4.5h-2.5C10.9 4.5 9 6.1 9 9v2H6v3.5h3V22h4v-7.5h3l.5-3.5H13V9.4c0-1 .4-1.4 1.5-1.4Z"/></svg></a>
-        <a href="https://instagram.com/miscuziph" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.15a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z"/></svg></a>
+        <a href="https://facebook.com/963141783839421" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M13.5 8H16V4.5h-2.5C10.9 4.5 9 6.1 9 9v2H6v3.5h3V22h4v-7.5h3l.5-3.5H13V9.4c0-1 .4-1.4 1.5-1.4Z"/>
+          </svg>
+        </a>
+        <a href="https://instagram.com/miscuziph" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.15a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z"/>
+          </svg>
+        </a>
       </div>
     </div>
   </section>
 </main>
-<footer><div class="container footer-inner"><span>© 2026 Miscuzi. All Rights Reserved.</span><span>Comfort food, Elevated.</span></div></footer>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© 2026 Miscuzi. All Rights Reserved.</span>
+    <span>Comfort food, Elevated.</span>
+  </div>
+</footer>
+
 <script>
-  const menuToggle=document.querySelector(".menu-toggle"),navLinks=document.querySelector(".nav-links");
-  menuToggle.addEventListener("click",()=>{const open=navLinks.classList.toggle("open");menuToggle.setAttribute("aria-expanded",open?"true":"false")});
-  document.querySelectorAll(".nav-links a").forEach(link=>link.addEventListener("click",()=>{navLinks.classList.remove("open");menuToggle.setAttribute("aria-expanded","false")}));
-  const carousel=document.getElementById("photoCarousel"),slides=[...carousel.querySelectorAll(".gallery-slide")],prev=document.querySelector(".carousel-btn.prev"),next=document.querySelector(".carousel-btn.next"),dotsWrap=document.getElementById("galleryDots");
-  function slideStep(){const styles=getComputedStyle(carousel),gap=parseFloat(styles.gap||12);return slides[0].getBoundingClientRect().width+gap}
-  function moveCarousel(direction){carousel.scrollBy({left:slideStep()*direction,behavior:"smooth"})}
-  prev.addEventListener("click",()=>moveCarousel(-1));next.addEventListener("click",()=>moveCarousel(1));
-  slides.forEach((_,index)=>{const dot=document.createElement("button");dot.type="button";dot.className="gallery-dot"+(index===0?" active":"");dot.setAttribute("aria-label","Go to gallery image "+(index+1));dot.addEventListener("click",()=>carousel.scrollTo({left:slideStep()*index,behavior:"smooth"}));dotsWrap.appendChild(dot)});
-  const dots=[...dotsWrap.querySelectorAll(".gallery-dot")];
-  function updateDots(){const index=Math.round(carousel.scrollLeft/slideStep());dots.forEach((dot,i)=>dot.classList.toggle("active",i===Math.min(index,dots.length-1)))}
-  carousel.addEventListener("scroll",()=>requestAnimationFrame(updateDots));
-  let autoAdvance=setInterval(()=>{const maxScroll=carousel.scrollWidth-carousel.clientWidth;if(carousel.scrollLeft>=maxScroll-5){carousel.scrollTo({left:0,behavior:"smooth"})}else{moveCarousel(1)}},5000);
-  ["mouseenter","touchstart","pointerdown"].forEach(evt=>carousel.addEventListener(evt,()=>clearInterval(autoAdvance),{once:true}));
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  menuToggle.addEventListener("click", () => {
+    const open = navLinks.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  const carousel = document.getElementById("photoCarousel");
+  const slides = [...carousel.querySelectorAll(".gallery-slide")];
+  const prev = document.querySelector(".carousel-btn.prev");
+  const next = document.querySelector(".carousel-btn.next");
+  const dotsWrap = document.getElementById("galleryDots");
+
+  function slideStep() {
+    const styles = getComputedStyle(carousel);
+    const gap = parseFloat(styles.gap || 12);
+    return slides[0].getBoundingClientRect().width + gap;
+  }
+
+  function moveCarousel(direction) {
+    carousel.scrollBy({left: slideStep() * direction, behavior:"smooth"});
+  }
+
+  prev.addEventListener("click", () => moveCarousel(-1));
+  next.addEventListener("click", () => moveCarousel(1));
+
+  slides.forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "gallery-dot" + (index === 0 ? " active" : "");
+    dot.setAttribute("aria-label", "Go to gallery image " + (index + 1));
+    dot.addEventListener("click", () => {
+      carousel.scrollTo({left: slideStep() * index, behavior:"smooth"});
+    });
+    dotsWrap.appendChild(dot);
+  });
+
+  const dots = [...dotsWrap.querySelectorAll(".gallery-dot")];
+
+  function updateDots() {
+    const index = Math.round(carousel.scrollLeft / slideStep());
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === Math.min(index, dots.length - 1)));
+  }
+
+  carousel.addEventListener("scroll", () => requestAnimationFrame(updateDots));
+
+  let autoAdvance = setInterval(() => {
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    if (carousel.scrollLeft >= maxScroll - 5) {
+      carousel.scrollTo({left:0,behavior:"smooth"});
+    } else {
+      moveCarousel(1);
+    }
+  }, 5000);
+
+  ["mouseenter","touchstart","pointerdown"].forEach(evt => {
+    carousel.addEventListener(evt, () => clearInterval(autoAdvance), {once:true});
+  });
 </script>
+
 </body>
 </html>
